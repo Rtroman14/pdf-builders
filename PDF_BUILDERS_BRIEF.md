@@ -24,9 +24,26 @@ Consolidated requirements for the new PDF Builders website, from Brandon's email
 - Uses Brandon's "Trust Is the Foundation of Every Great Project" copy.
 
 ## Reference sites (what to borrow)
-- **Peachtree Decks & Porches** — premium look; design positioned as part of the product; "see it before we build it" / 3D design.
-- **Dutchmen Decks** — clean, simple guided journey; clear CTAs; city pages.
-- **All Decked Out (513)** — questionnaire *is* the primary CTA; education/blog content; owner walkthrough videos; FAQ.
+Brandon was explicit: **do not recreate any of these** — borrow the best of each and build around Consult · Design · Build.
+
+### Peachtree Decks & Porches — https://peachtreedecksandporches.com/
+His **top reference** for overall look and feel.
+- Premium, higher-end appearance that makes the company and its projects feel upscale.
+- Strong photography (bright, clean, crisp) — the exact photo quality he wants for PDF.
+- Positions **design as part of the product**, not just construction: conversation → onsite visit → 3D design → shows the homeowner what they're getting before building.
+- Talks openly about **cost** in their FAQ (most projects starting around a set point), which he wants to emulate.
+
+### Dutchmen Decks — https://dutchmendecks.com/
+- Cleanliness of the site and clear calls to action.
+- **Simple, guided customer journey** (request → estimate → schedule → build) that walks visitors through their choices instead of dumping a list of services.
+- Liked their wording / communication style.
+- **City/market landing pages** (individual Ohio markets, e.g., Delaware, Hilliard) as a local-SEO strategy.
+
+### All Decked Out — https://alldeckedout513.com/
+- Best-in-class **content**: wording, blogs, and educational/process information.
+- **Owner and production-manager videos** walking clients through projects.
+- The **questionnaire as the primary CTA** (first step of their process, not a generic contact form); specifically liked questions like "How did you find us?" for marketing insight. He forwarded their full questionnaire verbiage as a starting point (PDF does more pavers, less stamped concrete, and **no repairs**).
+- Caveat: the site isn't as visually polished as Peachtree — it's the content, videos, and questionnaire he wants to borrow.
 
 ## Information architecture
 Nav: **Projects · Services · Our Process · About · Reviews · Resources · Start Your Project (CTA)**

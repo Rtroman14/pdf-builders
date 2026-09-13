@@ -3,84 +3,82 @@ import { Section } from "@/components/section";
 import { CTA } from "@/components/cta";
 import { Card } from "@/components/ui/card";
 import { GetQuoteButton } from "@/components/get-quote-button";
-import { TrophyIcon, ShieldCheckIcon, UsersIcon, BoltIcon } from "@heroicons/react/24/outline";
+import { Credentials } from "@/components/credentials";
+import { ImagePlaceholder } from "@/components/image-placeholder";
+import { HeartIcon, HandRaisedIcon, UsersIcon, SparklesIcon } from "@heroicons/react/24/outline";
+import { defaultConfig } from "@/lib/default-config";
 
 export const metadata = {
-    title: "About Us | Premier Roofing - Built on Trust, Powered by Expertise",
+    title: "About PDF Builders | A Family-Owned Outdoor Living Builder",
     description:
-        "For over 25 years, Premier Roofing has been the trusted choice for homeowners and businesses seeking exceptional craftsmanship and unwavering reliability.",
+        "PDF Builders is a family-owned, father-and-son outdoor living company in Central Ohio, built on honest work, quality craftsmanship, and loyal repeat customers.",
 };
 
 const values = [
     {
-        icon: TrophyIcon,
-        title: "Excellence",
+        icon: HandRaisedIcon,
+        title: "Honesty",
         description:
-            "We never compromise on quality, using only premium materials and proven installation methods.",
+            "Straight answers about design, materials, and investment — even when it's not what's easiest to sell.",
     },
     {
-        icon: ShieldCheckIcon,
-        title: "Integrity",
+        icon: HeartIcon,
+        title: "Family-Owned",
         description:
-            "Honest assessments, transparent pricing, and straightforward communication every step of the way.",
+            "A father-and-son business that treats your home the way we'd treat our own.",
     },
     {
         icon: UsersIcon,
-        title: "Partnership",
+        title: "Loyal Customers",
         description:
-            "We build lasting relationships with our clients, supporting them long after installation.",
+            "So much of our work comes from repeat clients and their referrals — the truest measure of trust.",
     },
     {
-        icon: BoltIcon,
-        title: "Precision",
+        icon: SparklesIcon,
+        title: "Craftsmanship",
         description:
-            "Meticulous attention to detail ensures every project meets our exacting standards.",
+            "Premium materials and a standard we're proud to put our family name on.",
     },
 ];
 
 const team = [
     {
-        name: "James Sullivan",
-        title: "Founder & Master Roofer",
+        name: "Brandon Mechtly",
+        title: "Owner",
         description:
-            "With over 30 years in the industry, James leads every major project with hands-on expertise.",
-        image: "/team/professional-male-roofing-contractor-portrait.jpg",
-        imageAlt: "James Sullivan, Founder & Master Roofer",
+            "Brandon has spent decades in outdoor living and leads every project with a hands-on, honest approach.",
+        label: "Brandon",
     },
     {
-        name: "Maria Rodriguez",
-        title: "Operations Director",
+        name: "Donovan",
+        title: "Design & Production",
         description:
-            "Maria ensures every project runs smoothly from initial estimate to final inspection.",
-        image: "/team/professional-female-roofing-project-manager-portra.jpg",
-        imageAlt: "Maria Rodriguez, Operations Director",
+            "Donovan helps homeowners turn an idea into a design and carries it through to a finished backyard.",
+        label: "Donovan",
     },
     {
-        name: "David Chen",
-        title: "Senior Technician",
+        name: "The PDF Builders Family",
+        title: "Our Crew",
         description:
-            "David's technical expertise and 20+ years of experience guarantee flawless installations.",
-        image: "/team/professional-male-roofing-senior-technician-portra.jpg",
-        imageAlt: "David Chen, Senior Technician",
+            "A team that takes pride in doing it right the first time and standing behind the work.",
+        label: "Family & crew",
     },
 ];
 
 export default function AboutUsPage() {
     return (
         <div className="flex flex-col">
-            {/* Hero Section */}
             <PageHero
-                title="Built On Trust, Powered By Expertise"
-                subheading="For over 25 years, Premier Roofing has been the trusted choice for homeowners and businesses seeking exceptional craftsmanship and unwavering reliability."
-                imageSrc="/professional-roofer-installing-shingles-on-house.jpg"
-                imageAlt="Professional roofer installing shingles"
+                title="A family business, built on honest work."
+                subheading="PDF Builders is a family-owned, father-and-son company designing and building outdoor living spaces across Central Ohio."
                 primaryButton={{
-                    label: "Get a Quote",
-                    message: "I'd like to get a quote",
+                    label: "Start Your Project",
+                    message: defaultConfig.startProjectMessage,
                 }}
+                secondaryButton={{ label: "View Our Work", href: "/projects" }}
             />
 
-            {/* Our Story Section */}
+            {/* Our Story */}
             <div className="py-24 sm:py-32">
                 <Section className="max-w-7xl">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -90,72 +88,91 @@ export default function AboutUsPage() {
                             </h2>
                             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                                 <p>
-                                    Premier Roofing was founded in 1998 by Master Roofer James
-                                    Sullivan, who saw an opportunity to bring old-world
-                                    craftsmanship into modern roofing practices. What started as a
-                                    small family operation has grown into one of the region's most
-                                    trusted roofing companies.
+                                    PDF Builders is a family-owned, father-and-son business. Brandon
+                                    has spent much of his career building outdoor living spaces — he
+                                    ran an outdoor living company for about a decade in the 2000s
+                                    before relaunching as PDF Builders in 2016.
                                 </p>
                                 <p>
-                                    Our commitment has always been simple: treat every roof as if it
-                                    were protecting our own family. This philosophy has earned us
-                                    thousands of satisfied customers and a reputation for excellence
-                                    that stands the test of time.
+                                    Working alongside his son, he's built the company around
+                                    something simple: do honest work, build it right, and take care
+                                    of people. That's why so much of what we do comes from repeat
+                                    customers and the neighbors they refer to us.
                                 </p>
                                 <p>
-                                    Today, we combine traditional quality with cutting-edge
-                                    materials and techniques, ensuring that your roof not only looks
-                                    beautiful but provides decades of reliable protection.
+                                    We're intentional about who we work with, and we treat every
+                                    backyard like it's going in behind our own home.
                                 </p>
                             </div>
-
                             <div className="mt-8">
-                                <GetQuoteButton />
+                                <GetQuoteButton className="rounded-full" />
                             </div>
                         </div>
-
-                        <div className="relative">
-                            <div className="aspect-4/5 w-full rounded-2xl overflow-hidden">
-                                <img
-                                    src="/professional-roofing-crew-working-on-residential-h.jpg"
-                                    alt="Professional roofing crew working on residential home"
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
+                        <div className="relative aspect-4/5 w-full rounded-2xl overflow-hidden border">
+                            <ImagePlaceholder label="Brandon & family" className="rounded-2xl" />
                         </div>
                     </div>
                 </Section>
             </div>
 
-            {/* Our Values Section */}
+            {/* Trust copy */}
             <div className="bg-secondary py-24 sm:py-32">
+                <Section className="max-w-4xl">
+                    <div className="space-y-6 text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                            Trust is the foundation of every great project.
+                        </h2>
+                        <div className="space-y-4 text-lg text-muted-foreground leading-relaxed text-left">
+                            <p>
+                                The most successful outdoor living projects share one thing in
+                                common: a strong partnership between homeowner and builder. When
+                                clients trust our expertise, engage openly in the process, and
+                                prioritize lasting quality, the result is always something worth
+                                being proud of.
+                            </p>
+                            <p>
+                                Our best relationships are with homeowners who value craftsmanship,
+                                clear communication, and the kind of professionalism a major home
+                                investment deserves. They understand that building a premium outdoor
+                                space isn't about cutting corners or chasing the lowest bid — it's
+                                about doing it right the first time.
+                            </p>
+                            <p>
+                                We may not be the right fit for everyone, and that's okay. But when
+                                trust, respect, and a shared commitment to quality come together,
+                                that's when extraordinary outdoor spaces come to life.
+                            </p>
+                            <p className="font-semibold text-foreground">
+                                That's what we do at PDF Builders — we design and build spaces made
+                                for the way you live outdoors.
+                            </p>
+                        </div>
+                    </div>
+                </Section>
+            </div>
+
+            {/* Values */}
+            <div className="py-24 sm:py-32">
                 <Section className="max-w-7xl">
                     <div className="space-y-12">
                         <div className="max-w-3xl mx-auto text-center space-y-4">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                Our Values
+                                What we stand for
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                These principles guide every project we undertake and every
-                                relationship we build.
-                            </p>
                         </div>
-
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {values.map((value, index) => {
+                            {values.map((value) => {
                                 const Icon = value.icon;
                                 return (
                                     <Card
-                                        key={index}
+                                        key={value.title}
                                         className="p-8 hover:shadow-lg transition-all duration-300"
                                     >
                                         <div className="space-y-4 text-center">
                                             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mx-auto">
                                                 <Icon className="w-8 h-8" />
                                             </div>
-
                                             <h3 className="text-xl font-bold">{value.title}</h3>
-
                                             <p className="text-muted-foreground leading-relaxed">
                                                 {value.description}
                                             </p>
@@ -168,31 +185,24 @@ export default function AboutUsPage() {
                 </Section>
             </div>
 
-            {/* Expert Team Section */}
-            <div className="py-24 sm:py-32">
+            {/* Team */}
+            <div className="bg-secondary py-24 sm:py-32">
                 <Section className="max-w-7xl">
                     <div className="space-y-12">
                         <div className="max-w-3xl mx-auto text-center space-y-4">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-balance">
-                                Expert Team, Exceptional Results
+                                The family behind the work
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Our certified professionals bring decades of combined experience to
-                                every project.
+                                Photos coming soon — Brandon, Donovan, and the PDF Builders family.
                             </p>
                         </div>
-
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {team.map((member, index) => (
-                                <Card key={index} className="p-0 overflow-hidden">
+                            {team.map((member) => (
+                                <Card key={member.name} className="p-0 overflow-hidden">
                                     <div className="aspect-4/5 w-full overflow-hidden">
-                                        <img
-                                            src={member.image}
-                                            alt={member.imageAlt}
-                                            className="w-full h-full object-cover"
-                                        />
+                                        <ImagePlaceholder label={member.label} />
                                     </div>
-
                                     <div className="p-4 space-y-2">
                                         <h3 className="text-xl font-bold">{member.name}</h3>
                                         <p className="text-primary font-semibold">{member.title}</p>
@@ -207,13 +217,22 @@ export default function AboutUsPage() {
                 </Section>
             </div>
 
-            {/* CTA Section */}
+            {/* Credentials */}
+            <div className="py-24 sm:py-32">
+                <Section className="max-w-7xl">
+                    <div className="space-y-8 text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                            Credentials &amp; certifications
+                        </h2>
+                        <Credentials variant="light" />
+                    </div>
+                </Section>
+            </div>
+
+            {/* CTA */}
             <div className="pb-24 sm:pb-32">
                 <Section className="max-w-7xl">
-                    <CTA
-                        title="Ready to work with the best?"
-                        subheading="Join thousands of satisfied customers who trust us to protect their most valuable investment. Get your free estimate today."
-                    />
+                    <CTA title={defaultConfig.ctaTitle} subheading={defaultConfig.ctaDescription} />
                 </Section>
             </div>
         </div>

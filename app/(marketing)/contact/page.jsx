@@ -6,9 +6,9 @@ import { MapPinIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { defaultConfig } from "@/lib/default-config";
 
 export const metadata = {
-    title: "Contact Us | Get Your Free Roofing Estimate Today",
+    title: "Contact PDF Builders | Central Ohio Outdoor Living",
     description:
-        "Contact our roofing experts for a free estimate. We're here to answer your questions and provide the perfect roofing solution for your home or business.",
+        "Get in touch with PDF Builders about your deck, patio, or complete backyard project in Central Ohio. We're here to answer your questions.",
 };
 
 export default function ContactPage({
@@ -44,9 +44,7 @@ export default function ContactPage({
                         Get In <span className="text-primary">Touch</span>
                     </span>
                 }
-                subheading="Get your free estimate today. Our experts are ready to answer your questions and provide the perfect roofing solution for your home."
-                imageSrc="/aerial-roof.jpg"
-                imageAlt="Aerial view of a quality roof installation"
+                subheading="Tell us about your backyard. Our team is ready to answer your questions and help you plan your outdoor living project."
             />
             <div className="py-24 sm:py-32">
                 <Section className="max-w-7xl">
@@ -55,11 +53,11 @@ export default function ContactPage({
                         <div className="space-y-8">
                             <div className="space-y-4">
                                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                    Request Your Free Inspection Today
+                                    Let's talk about your backyard
                                 </h2>
                                 <p className="text-lg text-muted-foreground leading-relaxed">
-                                    Our roofing experts are here to help. Reach out to us and we'll
-                                    get back to you within 24 hours.
+                                    Our team is here to help. Reach out and we'll get back to you —
+                                    or start your project anytime and we'll walk you through it.
                                 </p>
                             </div>
 

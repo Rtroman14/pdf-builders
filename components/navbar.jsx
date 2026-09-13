@@ -35,20 +35,8 @@ export function NavBar({
                 ],
             },
             {
-                title: "Our Process",
-                href: "/process",
-            },
-            {
                 title: "About",
                 href: "/about-us",
-            },
-            {
-                title: "Reviews",
-                href: "/reviews",
-            },
-            {
-                title: "Resources",
-                href: "/resources",
             },
         ],
         [cityName]

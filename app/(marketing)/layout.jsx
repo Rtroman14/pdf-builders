@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children, config = defaultConfig }) {
     return (
         <>
-            <Script src="https://roofera.ai/api/chatbot/c7231e21-5db0-460c-95a9-ad8670a9d6b9/widget" />
+            <Script src="https://romey.ai/api/chatbot/c7231e21-5db0-460c-95a9-ad8670a9d6b9/widget" />
 
             <NavBar phoneNumber={config.phoneNumber} companyName={config.companyName} />
             <main className="h-full">{children}</main>

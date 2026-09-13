@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { defaultConfig } from "@/lib/default-config";
+import { sendMessageToChatbot } from "@/lib/chatbot-utils";
 
 export function GetQuoteButton({
     message = defaultConfig.startProjectMessage,
@@ -11,19 +12,7 @@ export function GetQuoteButton({
     className = "",
 }) {
     const handleClick = () => {
-        const iframe = document.getElementById("roofera-iframe");
-        if (iframe && iframe.contentWindow) {
-            iframe.contentWindow.postMessage(
-                {
-                    type: "send-chatbot-message",
-                    message: message,
-                },
-                "*"
-            );
-            console.log("Message sent to chatbot:", message);
-        } else {
-            console.error("Chatbot iframe not found. Please wait for the chatbot to load.");
-        }
+        sendMessageToChatbot(message);
     };
 
     return (

@@ -164,13 +164,12 @@ export const Footer = ({
                         Copyright &copy; {new Date().getFullYear()} {companyName}. All rights
                         reserved. | Website designed by{" "}
                         <a
-                            href="https://roofera.ai?utm_source=client_website&utm_medium=footer&utm_campaign=branding"
+                            href="https://romey.ai?utm_source=client_website&utm_medium=footer&utm_campaign=branding"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:opacity-80 transition-opacity logo-font"
                         >
-                            <span className="text-black">Roof</span>
-                            <span style={{ color: "#3DCF8E" }}>Era</span>
+                            <span className="text-black">Romey</span>
                         </a>
                     </p>
                 </div>

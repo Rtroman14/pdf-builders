@@ -1,66 +1,41 @@
-import { HomeIcon, WrenchScrewdriverIcon, ShieldCheckIcon, WrenchIcon } from '@heroicons/react/24/outline';
+import Link from "next/link";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { services } from "@/lib/services-data";
+import { ImagePlaceholder } from "@/components/image-placeholder";
 
-const services = [
-    {
-        icon: HomeIcon,
-        title: "Roof Installation",
-        description: "Complete roof replacement with premium materials and expert installation guaranteed to last decades."
-    },
-    {
-        icon: WrenchScrewdriverIcon,
-        title: "Roof Repair",
-        description: "Fast, reliable repairs for leaks, storm damage, and wear. Emergency services available 24/7."
-    },
-    {
-        icon: ShieldCheckIcon,
-        title: "Roof Inspection",
-        description: "Thorough inspection and detailed report to identify issues before they become costly problems."
-    },
-    {
-        icon: WrenchIcon,
-        title: "Maintenance",
-        description: "Preventive maintenance programs to extend your roof's lifespan and protect your investment."
-    }
-];
-
-export const Services = () => {
+export const Services = ({
+    heading = "Everything we build for your backyard",
+    subheading = "One team designing and building every element of your outdoor living space.",
+}) => {
     return (
         <div className="space-y-12">
             <div className="max-w-3xl mx-auto text-center space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                    Comprehensive roofing services
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                    From installation to maintenance, we provide complete roofing solutions tailored to your needs.
-                </p>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">{heading}</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">{subheading}</p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {services.map((service, index) => {
-                    const Icon = service.icon;
-                    return (
-                        <div 
-                            key={index}
-                            className="group relative bg-card border rounded-2xl p-8 hover:shadow-lg transition-all duration-300"
-                        >
-                            <div className="space-y-4">
-                                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary">
-                                    <Icon className="w-7 h-7" />
-                                </div>
-                                
-                                <h3 className="text-xl font-bold">
-                                    {service.title}
-                                </h3>
-                                
-                                <p className="text-muted-foreground leading-relaxed">
-                                    {service.description}
-                                </p>
-                            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {services.map((service) => (
+                    <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        className="group bg-card border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
+                    >
+                        <div className="relative aspect-16/10 w-full">
+                            <ImagePlaceholder label={service.name} />
                         </div>
-                    );
-                })}
+                        <div className="p-6 space-y-2">
+                            <h3 className="text-xl font-bold flex items-center justify-between">
+                                {service.name}
+                                <ArrowRightIcon className="size-4 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                            </h3>
+                            <p className="text-muted-foreground leading-relaxed text-sm">
+                                {service.short}
+                            </p>
+                        </div>
+                    </Link>
+                ))}
             </div>
         </div>
     );
 };
-

@@ -27,61 +27,37 @@ export const PageHero = ({
             sendMessageToChatbot(primaryButton.message);
         }
     };
+
     return (
         <div className="relative min-h-[70vh] sm:min-h-[65vh] lg:min-h-[60vh] w-full flex items-center justify-center overflow-hidden py-24 sm:py-28 lg:py-32">
-            <Image src={imageSrc} alt={imageAlt} fill className="object-cover" priority />
-            <div className="absolute inset-0 bg-black/65" />
+            {imageSrc ? (
+                <>
+                    <Image src={imageSrc} alt={imageAlt} fill className="object-cover" priority />
+                    <div className="absolute inset-0 bg-black/65" />
+                </>
+            ) : (
+                <>
+                    <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-800 to-[oklch(0.3_0.05_62)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.5)_100%)]" />
+                </>
+            )}
             <Section className="relative z-10 w-full max-w-7xl">
                 <div className={cn("flex flex-col overflow-visible", className)}>
-                    <motion.div
-                        initial={{
-                            y: 40,
-                            opacity: 0,
-                        }}
-                        animate={{
-                            y: 0,
-                            opacity: 1,
-                        }}
-                        transition={{
-                            ease: "easeOut",
-                            duration: 0.5,
-                        }}
-                        className="flex justify-center"
-                    ></motion.div>
                     <motion.h1
-                        initial={{
-                            y: 40,
-                            opacity: 0,
-                        }}
-                        animate={{
-                            y: 0,
-                            opacity: 1,
-                        }}
-                        transition={{
-                            ease: "easeOut",
-                            duration: 0.5,
-                        }}
+                        initial={{ y: 40, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ ease: "easeOut", duration: 0.5 }}
                         className={cn(
-                            "text-5xl tracking-tight lg:text-8xl font-semibold max-w-6xl mx-auto text-center mt-6 relative z-10 text-balance text-white",
+                            "text-5xl tracking-tight lg:text-7xl font-semibold max-w-5xl mx-auto text-center mt-6 relative z-10 text-balance text-white",
                             titleClassName
                         )}
                     >
                         {title}
                     </motion.h1>
                     <motion.p
-                        initial={{
-                            y: 40,
-                            opacity: 0,
-                        }}
-                        animate={{
-                            y: 0,
-                            opacity: 1,
-                        }}
-                        transition={{
-                            ease: "easeOut",
-                            duration: 0.5,
-                            delay: 0.2,
-                        }}
+                        initial={{ y: 40, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ ease: "easeOut", duration: 0.5, delay: 0.2 }}
                         className={cn(
                             "text-center mt-6 text-base md:text-xl text-neutral-200 max-w-3xl mx-auto relative z-10 text-balance",
                             subheadingClassName
@@ -91,20 +67,10 @@ export const PageHero = ({
                     </motion.p>
                     {(primaryButton || secondaryButton) && (
                         <motion.div
-                            initial={{
-                                y: 80,
-                                opacity: 0,
-                            }}
-                            animate={{
-                                y: 0,
-                                opacity: 1,
-                            }}
-                            transition={{
-                                ease: "easeOut",
-                                duration: 0.5,
-                                delay: 0.4,
-                            }}
-                            className="flex items-center gap-4 justify-center mt-6 relative z-10"
+                            initial={{ y: 80, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ ease: "easeOut", duration: 0.5, delay: 0.4 }}
+                            className="flex flex-col sm:flex-row items-center gap-4 justify-center mt-8 relative z-10"
                         >
                             {primaryButton &&
                                 (primaryButton.href ? (
@@ -120,6 +86,16 @@ export const PageHero = ({
                                         {primaryButton.label}
                                     </Button>
                                 ))}
+                            {secondaryButton && secondaryButton.href && (
+                                <Button
+                                    asChild
+                                    size="lg"
+                                    variant="outline"
+                                    className="rounded-full bg-transparent text-white border-white/40 hover:bg-white hover:text-black"
+                                >
+                                    <Link href={secondaryButton.href}>{secondaryButton.label}</Link>
+                                </Button>
+                            )}
                         </motion.div>
                     )}
                 </div>

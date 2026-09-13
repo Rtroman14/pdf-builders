@@ -5,6 +5,7 @@ import { MobileNavbar } from "./mobile-navbar";
 import { motion } from "framer-motion";
 import { useEffect, useState, useMemo } from "react";
 import { defaultConfig } from "@/lib/default-config";
+import { services } from "@/lib/services-data";
 
 export function NavBar({
     phoneNumber = defaultConfig.phoneNumber,
@@ -15,60 +16,39 @@ export function NavBar({
     const navItems = useMemo(
         () => [
             {
-                title: "About Us",
-                href: "/about-us",
+                title: "Projects",
+                href: "/projects",
             },
             {
                 title: "Services",
                 children: [
                     {
-                        title: "Residential",
-                        href: "/services/residential",
-                        description:
-                            "Expert roofing solutions for homeowners and residential properties.",
+                        title: "All Services",
+                        href: "/services",
+                        description: "Explore everything we design and build for your backyard.",
                     },
-                    {
-                        title: "Commercial",
-                        href: "/services/commercial",
-                        description:
-                            "Professional roofing services for businesses and commercial buildings.",
-                    },
-                    {
-                        title: "Gutters",
-                        href: "/services/gutters",
-                        description:
-                            "Installation, repair, and maintenance for seamless gutter systems.",
-                    },
-                    {
-                        title: "Storm Damage",
-                        href: "/services/storm-damage",
-                        description:
-                            "24/7 emergency response and insurance claim assistance for storm damage.",
-                    },
+                    ...services.map((service) => ({
+                        title: service.name,
+                        href: `/services/${service.slug}`,
+                        description: service.short,
+                    })),
                 ],
             },
             {
-                title: "Gallery",
-                href: "/gallery",
+                title: "Our Process",
+                href: "/process",
             },
             {
-                title: "Service Areas",
-                children: [
-                    {
-                        title: "View All Areas",
-                        href: "/service-areas",
-                        description: "See all the cities and neighborhoods we serve in your area.",
-                    },
-                    {
-                        title: cityName,
-                        href: "/service-areas/city",
-                        description: `Expert roofing services throughout ${cityName} and surrounding areas.`,
-                    },
-                ],
+                title: "About",
+                href: "/about-us",
             },
             {
-                title: "Contact",
-                href: "/contact",
+                title: "Reviews",
+                href: "/reviews",
+            },
+            {
+                title: "Resources",
+                href: "/resources",
             },
         ],
         [cityName]

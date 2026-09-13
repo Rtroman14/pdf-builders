@@ -1,10 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { defaultConfig } from "@/lib/default-config";
 
 export function GetQuoteButton({
-    message = "I'd like to get a quote",
-    label = "Get a Quote",
+    message = defaultConfig.startProjectMessage,
+    label = "Start Your Project",
     size = "lg",
     variant = "default",
     className = "",

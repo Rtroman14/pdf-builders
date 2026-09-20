@@ -5,7 +5,7 @@ import { Field, FieldLabel, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { handleContactFormSubmit } from "@/lib/form-actions";
+import { submitContactForm } from "@/lib/actions/submit-contact-form";
 
 export function ContactForm({
     title = "Tell Us About Your Project",
@@ -38,7 +38,7 @@ export function ContactForm({
         setSubmitStatus(null);
 
         try {
-            const result = await handleContactFormSubmit(formData);
+            const result = await submitContactForm(formData);
             setSubmitStatus(result);
 
             if (result.success) {
@@ -80,6 +80,13 @@ export function ContactForm({
                     }`}
                 >
                     <p className="text-sm font-medium">{submitStatus.message}</p>
+                    {submitStatus.fieldErrors && (
+                        <ul className="mt-2 list-disc list-inside text-sm">
+                            {Object.entries(submitStatus.fieldErrors).map(([field, messages]) => (
+                                <li key={field}>{messages[0]}</li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
             )}
 

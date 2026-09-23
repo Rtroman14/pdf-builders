@@ -26,7 +26,12 @@ export function BuildTiles() {
                         href={`/services/${service.slug}`}
                         className="group relative aspect-4/5 rounded-2xl overflow-hidden"
                     >
-                        <ImagePlaceholder label={service.name} className="rounded-2xl" />
+                        <ImagePlaceholder
+                            src={service.tileImage}
+                            label={service.name}
+                            sizes="(min-width: 768px) 25vw, 50vw"
+                            className="rounded-2xl group-hover:scale-105 transition-transform duration-500"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                         <div className="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between">
                             <h3 className="text-lg font-semibold text-white leading-tight">
@@ -43,7 +48,12 @@ export function BuildTiles() {
                     href={`/services/${transformation.slug}`}
                     className="group relative block h-64 sm:h-80 rounded-2xl overflow-hidden"
                 >
-                    <ImagePlaceholder label="Complete Backyard Transformations" className="rounded-2xl" />
+                    <ImagePlaceholder
+                        src={transformation.tileImage}
+                        label="Complete Backyard Transformations"
+                        sizes="(min-width: 1280px) 1280px, 100vw"
+                        className="rounded-2xl"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
                     <div className="absolute inset-0 flex flex-col justify-center p-8 sm:p-12 max-w-2xl">
                         <h3 className="text-3xl sm:text-4xl font-bold text-white">

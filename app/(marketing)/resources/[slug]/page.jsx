@@ -43,7 +43,14 @@ export default async function ResourcePage({ params }) {
                         <span>{article.readTime}</span>
                     </div>
                     <div className="relative aspect-16/9 w-full rounded-2xl overflow-hidden border mb-10">
-                        <ImagePlaceholder label={article.category} className="rounded-2xl" />
+                        <ImagePlaceholder
+                            src={article.image}
+                            alt={article.title}
+                            label={article.category}
+                            sizes="(min-width: 1024px) 896px, 100vw"
+                            priority
+                            className="rounded-2xl"
+                        />
                     </div>
                     <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                         {article.body.map((paragraph, index) => (
@@ -64,7 +71,12 @@ export default async function ResourcePage({ params }) {
                                 <Link key={r.slug} href={`/resources/${r.slug}`}>
                                     <Card className="p-0 overflow-hidden h-full hover:shadow-lg transition-all duration-300">
                                         <div className="relative aspect-16/10 w-full">
-                                            <ImagePlaceholder label={r.category} />
+                                            <ImagePlaceholder
+                                                src={r.image}
+                                                alt={r.title}
+                                                label={r.category}
+                                                sizes="(min-width: 640px) 33vw, 100vw"
+                                            />
                                         </div>
                                         <div className="p-6 space-y-2">
                                             <h3 className="text-lg font-bold leading-snug">

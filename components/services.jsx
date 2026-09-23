@@ -22,7 +22,11 @@ export const Services = ({
                         className="group bg-card border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
                     >
                         <div className="relative aspect-16/10 w-full">
-                            <ImagePlaceholder label={service.name} />
+                            <ImagePlaceholder
+                                src={service.tileImage}
+                                label={service.name}
+                                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                            />
                         </div>
                         <div className="p-6 space-y-2">
                             <h3 className="text-xl font-bold flex items-center justify-between">

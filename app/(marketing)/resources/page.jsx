@@ -33,7 +33,12 @@ export default function ResourcesPage() {
                             <Link key={article.slug} href={`/resources/${article.slug}`}>
                                 <Card className="p-0 overflow-hidden h-full group hover:shadow-lg transition-all duration-300">
                                     <div className="relative aspect-16/10 w-full">
-                                        <ImagePlaceholder label={article.category} />
+                                        <ImagePlaceholder
+                                            src={article.image}
+                                            alt={article.title}
+                                            label={article.category}
+                                            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                        />
                                     </div>
                                     <div className="p-6 space-y-3">
                                         <div className="flex items-center gap-2 text-xs text-muted-foreground">

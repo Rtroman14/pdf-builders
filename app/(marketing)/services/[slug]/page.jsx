@@ -68,7 +68,12 @@ export default async function ServicePage({ params }) {
                             </div>
                         </div>
                         <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden border">
-                            <ImagePlaceholder label={`${service.name} photo`} className="rounded-2xl" />
+                            <ImagePlaceholder
+                                src={service.heroImage}
+                                label={`${service.name} photo`}
+                                priority
+                                className="rounded-2xl"
+                            />
                         </div>
                     </div>
                 </Section>
@@ -95,7 +100,11 @@ export default async function ServicePage({ params }) {
                                 <Link key={s.slug} href={`/services/${s.slug}`}>
                                     <Card className="p-0 overflow-hidden h-full hover:shadow-lg transition-all duration-300">
                                         <div className="relative aspect-16/10 w-full">
-                                            <ImagePlaceholder label={s.name} />
+                                            <ImagePlaceholder
+                                                src={s.tileImage}
+                                                label={s.name}
+                                                sizes="(min-width: 640px) 33vw, 100vw"
+                                            />
                                         </div>
                                         <div className="p-6 space-y-2">
                                             <h3 className="text-xl font-bold">{s.name}</h3>

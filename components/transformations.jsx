@@ -33,7 +33,13 @@ export function Transformations() {
                 {steps.map((step, index) => (
                     <div key={step.label} className="relative">
                         <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden border">
-                            <ImagePlaceholder label={step.badge} className="rounded-2xl" />
+                            <ImagePlaceholder
+                                src={step.image}
+                                alt={`${featured.title} — ${step.badge}`}
+                                label={step.badge}
+                                sizes="(min-width: 768px) 33vw, 100vw"
+                                className="rounded-2xl"
+                            />
                             <span className="absolute top-3 left-3 rounded-full bg-black/70 text-white text-xs font-semibold px-3 py-1 uppercase tracking-wide">
                                 {step.badge}
                             </span>

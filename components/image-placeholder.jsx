@@ -1,12 +1,33 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { PhotoIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
 
 /**
- * Reusable placeholder for imagery that will be supplied later.
- * Renders a tasteful gradient block with a label so the layout reads as
- * intentional until real photos/videos are dropped in.
+ * Renders a photo when `src` is provided, otherwise a tasteful gradient block
+ * with a label so the layout reads as intentional until real media arrives.
  */
-export function ImagePlaceholder({ label = "Photo coming soon", video = false, className }) {
+export function ImagePlaceholder({
+    src,
+    alt,
+    label = "Photo coming soon",
+    video = false,
+    sizes = "(min-width: 1024px) 50vw, 100vw",
+    priority = false,
+    className,
+}) {
+    if (src) {
+        return (
+            <Image
+                src={src}
+                alt={alt || label}
+                fill
+                sizes={sizes}
+                priority={priority}
+                className={cn("object-cover", className)}
+            />
+        );
+    }
+
     const Icon = video ? PlayCircleIcon : PhotoIcon;
     return (
         <div

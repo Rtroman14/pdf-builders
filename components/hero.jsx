@@ -6,14 +6,24 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { GetQuoteButton } from "@/components/get-quote-button";
 import { Button } from "@/components/ui/button";
+import { GoogleReviewsBadge } from "@/components/google-reviews-badge";
 
 export function Hero({ title, subheading, className }) {
     return (
         <div className={cn("w-full flex flex-col items-center text-center", className)}>
-            <motion.h1
+            <motion.div
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ ease: "easeOut", duration: 0.5 }}
+                className="relative z-10 mb-6"
+            >
+                <GoogleReviewsBadge />
+            </motion.div>
+
+            <motion.h1
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ ease: "easeOut", duration: 0.5, delay: 0.1 }}
                 className="text-5xl tracking-tight lg:text-7xl font-semibold relative z-10 text-white max-w-5xl"
             >
                 <Balancer>{title}</Balancer>

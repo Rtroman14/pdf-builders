@@ -48,7 +48,7 @@ export function Reviews({ reviews = defaultConfig.reviews, showBackground = fals
                 </p>
             </div>
 
-            <div>
+            <div className="w-full mask-[linear-gradient(to_right,transparent,black_25%,black_75%,transparent)]">
                 <Marquee pauseOnHover className="[--duration:20s]">
                     {firstRow.map((review, idx) => (
                         <ReviewCard key={`review-1-${idx}`} {...review} />
@@ -59,8 +59,6 @@ export function Reviews({ reviews = defaultConfig.reviews, showBackground = fals
                         <ReviewCard key={`review-2-${idx}`} {...review} />
                     ))}
                 </Marquee>
-                <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r"></div>
-                <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l"></div>
             </div>
         </div>
     );
